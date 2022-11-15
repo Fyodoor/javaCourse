@@ -25,11 +25,12 @@ public class PhoneBook {
     public String search( String[] conntactis, String name) {
 
         for (int i = 0; i < conntactis.length; i++) {
+            String name = scanner.nextLine();
             if (conntactis[i] == name) {
-                return i;
+                break;
             }
         }
-        return -1;
+        return i;
 
     }
 
