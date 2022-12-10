@@ -1,7 +1,9 @@
 package lesson_09;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -85,5 +87,37 @@ public class Main {
         System.out.println(list);
 
         System.out.println();
+
+//        Method.print(3,5);
+
+
+//        TreeSet<Integer> treeSet = new TreeSet<>(new ReverseIntegers());
+        TreeSet<Integer> treeSet = new TreeSet<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+
+        treeSet.add(20);
+        treeSet.add(30);
+        treeSet.add(18);
+        treeSet.add(25);
+        treeSet.add(17);
+        treeSet.add(22);
+
+        TreeSet<String> treeSet1 = new TreeSet<>();
+
+        treeSet1.add("AAA");
+        treeSet1.add("aaa");
+        treeSet1.add("BBB");
+        treeSet1.add("CCC");
+        treeSet1.add("DDD");
+        treeSet1.add("CCC");
+
+
+        System.out.println();
+
+
     }
 }
