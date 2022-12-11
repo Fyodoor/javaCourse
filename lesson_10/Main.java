@@ -1,5 +1,10 @@
 package lesson_10;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("1. Exception и как он работает");
@@ -36,7 +41,18 @@ public class Main {
         System.out.println("Программа продолжилась");
 
         System.out.println("5. Обход Exception с помощью try - catch - finally");
-
+        try {
+            Files.copy(new File("D:/rg.jbg").toPath(), new File("D:/rgg.jpg").toPath());
+        } catch (NoSuchFileException e) {
+            e.printStackTrace();
+            System.out.println("Ошибка произошла, потому что такого файла нет");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Какой-то из потоков не зацепил файл");
+        } finally {
+            // явано вызвать сборщик мусора, очистить кэш, завершить запись в журнале текущего дня логгирования
+            // итд
+        }
 
 
         System.out.println("Программа продолжилась");
